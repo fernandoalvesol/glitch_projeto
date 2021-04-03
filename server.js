@@ -53,6 +53,26 @@ app.post("/Dialogflow", function(request, response) {
   
   }
   
+    //cadastrar Dia da semana
+  if(intentName == "AdicionarDia"){ 
+    
+    console.log('adicionar dia')
+    
+    var Dia = request.body.queryResult.parameters['dia']; 
+    var Status = request.body.queryResult.parameters['status'];
+    
+    var query = 'insert into agenda values ("'+Dia+'","'
+    +Status+'")'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
+      if (error) throw error; connection.end(); 
+              response.json({"fulfillmentText" :"Dia da Semana Adicionado com Sucesso!" 
+}) 
+    }); 
+  
+  }
+  
   
   //Consultar Clientes
   
@@ -60,7 +80,7 @@ app.post("/Dialogflow", function(request, response) {
     
     console.log('Pesquisar Contato'); 
     
-    var query = 'select * from clientes where rg = "589785"';
+    var query = 'select * from clientes where rg = "528986"';
     
     //var CpfContato = request.body.queryResult.parameters['cpf']; 
     
