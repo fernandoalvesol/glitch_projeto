@@ -38,9 +38,11 @@ app.post("/Dialogflow", function(request, response) {
     
     var NomeContato = request.body.queryResult.parameters['nome']; 
     var TelefoneContato = request.body.queryResult.parameters['telefone'];
+    var CpfContato = request.body.queryResult.parameters['cpf'];
+    var RgContato = request.body.queryResult.parameters['rg']
     
     var query = 'insert into clientes values ("'+NomeContato+'","'
-    +TelefoneContato+'")'; 
+    +TelefoneContato+'", "'+CpfContato+'", "'+RgContato+'")'; 
     
     connection.query(query, function (error, results, fields) { 
       
