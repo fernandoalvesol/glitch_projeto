@@ -60,9 +60,11 @@ app.post("/Dialogflow", function(request, response) {
     
     console.log('Pesquisar Contato'); 
     
-    var CpfContato = request.body.queryResult.parameters['cpf']; 
+    var query = 'select * from clientes where rg = "589785"';
     
-    var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
+    //var CpfContato = request.body.queryResult.parameters['cpf']; 
+    
+    //var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
     
     connection.query(query, function (error, results, fields) { 
       
@@ -76,6 +78,8 @@ app.post("/Dialogflow", function(request, response) {
     }); 
   
   }
+  
+  
   
   //Excluir contatos
   
