@@ -53,6 +53,27 @@ app.post("/Dialogflow", function(request, response) {
   
   }
   
+  //Excluir contatos
+  
+  else if(intentName == 'ExcluirClientes'){ 
+    
+    console.log('Excluir Contato') 
+    
+    var CpfContato = request.body.queryResult.parameters['cpf']; 
+    
+    var query = 'delete from clientes where cpf = "'+CpfContato+'"'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
+      if (error) throw error; 
+      
+        connection.end(); 
+        response.json({"fulfillmentText":"Contato Apagado com Sucesso!" }) 
+    }); 
+  
+  }
+  
+  
   
   //função soma
     if (intentName == "teste") { 
