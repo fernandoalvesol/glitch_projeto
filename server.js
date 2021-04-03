@@ -115,9 +115,13 @@ app.post("/Dialogflow", function(request, response) {
       
       if (error) throw error; connection.end(); 
                   
-      var dia = ''; dia = 'Dia: '+results[0].dia+
-                          'Dia: '+results[1].dia+
-                          'Dia: '+results[2].dia;
+      var dia = '';
+      
+      for(dia = 'Dia:'+results[].dia+; )
+      /*var dia = ''; dia = 'Dia: '+results[0].dia+
+                          "\n |"+'Dia: '+results[1].dia+
+                          "\n |"+'Dia: '+results[2].dia+
+                          "\n |"+'Dia: '+results[3].dia;*/
                 
       
       response.json({"fulfillmentText": dia }) 
