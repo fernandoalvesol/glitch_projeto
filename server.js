@@ -114,9 +114,11 @@ app.post("/Dialogflow", function(request, response) {
     connection.query(query, function (error, results, fields) { 
       
       if (error) throw error; connection.end(); 
-      
-        var dia = ''; dia = 'Dia: '+results[0].dia+
-                            'Dia: '+results[1].dia;
+                  
+      var dia = ''; dia = 'Dia: '+results[0].dia+
+                          'Dia: '+results[1].dia+
+                          'Dia: '+results[2].dia;
+                
       
       response.json({"fulfillmentText": dia }) 
     }); 
