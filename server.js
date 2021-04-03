@@ -56,10 +56,10 @@ app.post("/Dialogflow", function(request, response) {
     //cadastrar Dia da semana
   if(intentName == "AdicionarDia"){ 
     
-    console.log('adicionar dia')
+    console.log('incluir')
     
     var Dia = request.body.queryResult.parameters['dia']; 
-    var Status = request.body.queryResult.parameters['status'];
+    var Status = request.body.queryResult.parameters['status']
     
     var query = 'insert into agenda values ("'+Dia+'","'
     +Status+'")'; 
@@ -95,6 +95,30 @@ app.post("/Dialogflow", function(request, response) {
                                 "\n |"+'Rg: '+results[0].rg; 
       
       response.json({"fulfillmentText": contato }) 
+    }); 
+  
+  }
+  
+  //Consultar Dia disponível
+  
+  else if(intentName == "ConsultarDia"){ 
+    
+    console.log('Pesquisar por dia'); 
+    
+    var query = 'select * from agenda where status = "ativo"';
+    
+    //var CpfContato = request.body.queryResult.parameters['cpf']; 
+    
+    //var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
+      if (error) throw error; connection.end(); 
+      
+        var dia = ''; dia = 'Dia: '+results[0].dia+
+                            'Dia: '+results[1].dia;
+      
+      response.json({"fulfillmentText": dia }) 
     }); 
   
   }
