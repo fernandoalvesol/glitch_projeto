@@ -22,11 +22,33 @@ app.post("/Dialogflow", function(request, response) {
     host: process.env.MYSQL_HOST, 
     user: process.env.MYSQL_USER, 
     password: process.env.MYSQL_PASS, 
-    database: process.env.MYSQL_DB }); 
+    database: process.env.MYSQL_DB
+  
+  
+  }); 
   
   connection.connect();
   
   var intentName = request.body.queryResult.intent.displayName; 
+  
+  
+  if(intentName == 'AddClientes'){ 
+    console.log('Adicionar Contato') 
+    var NomeContato = request.body.queryResult.parameters['nome']; 
+    var TelefoneContato = request.body.queryResult.parameters['telefone'];
+    var CpfContato = request.body.queryResult.parameters['cpf'];
+    
+    var query = 'insert into clientes values ("'+NomeContato+'","'
+    +TelefoneContato+'", "'+CpfContato+'")'; connection.query(query, 
+      function (error, results, fields) { 
+      if (error) throw error; connection.end(); 
+              response.json({"fulfillmentText" :"Contato Adicionado com Sucesso!" 
+}) 
+    }); 
+  
+  }
+  
+  
   
     if (intentName == "teste") { 
         var soma = request.body.queryResult.parameters["number1"] + 
