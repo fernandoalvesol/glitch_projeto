@@ -32,8 +32,10 @@ app.post("/Dialogflow", function(request, response) {
   var intentName = request.body.queryResult.intent.displayName; 
   
   
-  if(intentName == 'AddClientes'){ 
-    console.log('Adicionar Contato') 
+  if(intentName == 'Clientes'){ 
+    
+    console.log('Adicionar Contato')
+    
     var NomeContato = request.body.queryResult.parameters['nome']; 
     var TelefoneContato = request.body.queryResult.parameters['telefone'];
     var CpfContato = request.body.queryResult.parameters['cpf'];
