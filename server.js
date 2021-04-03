@@ -18,8 +18,10 @@ app.post("/Dialogflow", function(request, response) {
   var intentName = request.body.queryResult.intent.displayName; 
   
     if (intentName == "teste") { 
-        response.json({ "fulfillmentText" : "Testando WebHook..."}); 
-    
+        var soma = request.body.queryResult.parameters["number1"] + 
+            request.body.queryResult.parameters["number2"]; 
+      response.json({ "fulfillmentText" : 
+              "O Resultado da Soma é:" + "\n" + soma});
     } 
 
 });
