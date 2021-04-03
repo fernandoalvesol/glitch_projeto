@@ -31,7 +31,7 @@ app.post("/Dialogflow", function(request, response) {
   
   var intentName = request.body.queryResult.intent.displayName; 
   
-  
+  //cadastrar clientes
   if(intentName == "Clientes"){ 
     
     console.log('incluir')
@@ -54,7 +54,7 @@ app.post("/Dialogflow", function(request, response) {
   }
   
   
-  
+  //função soma
     if (intentName == "teste") { 
         var soma = request.body.queryResult.parameters["number1"] + 
             request.body.queryResult.parameters["number2"]; 
