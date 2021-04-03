@@ -32,7 +32,7 @@ app.post("/Dialogflow", function(request, response) {
   var intentName = request.body.queryResult.intent.displayName; 
   
   //cadastrar clientes
-  if(intentName == "Clientes"){ 
+  if(intentName == "AdicionarClientes"){ 
     
     console.log('incluir')
     
@@ -49,6 +49,30 @@ app.post("/Dialogflow", function(request, response) {
       if (error) throw error; connection.end(); 
               response.json({"fulfillmentText" :"Contato Adicionado com Sucesso!" 
 }) 
+    }); 
+  
+  }
+  
+  
+  //Consultar Clientes
+  
+  else if(intentName == "ConsultarClientes"){ 
+    
+    console.log('Pesquisar Contato'); 
+    
+    var CpfContato = request.body.queryResult.parameters['cpf']; 
+    
+    var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
+      if (error) throw error; connection.end(); 
+      
+        var contato = ''; contato = 'Nome: '+results[0].nome+
+                               "\n |"+'Telefone: '+results[0].telefone+
+                                "\n |"+'Rg: '+results[0].rg; 
+      
+      response.json({"fulfillmentText": contato }) 
     }); 
   
   }
