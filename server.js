@@ -14,6 +14,15 @@ const dreams = [
 
 app.use(express.static("public"));
 
+app.post("/Dialogflow", function(request, response) { 
+  var intentName = request.body.queryResult.intent.displayName; 
+  
+    if (intentName == "teste") { 
+        response.json({ "fulfillmentText" : "Testando WebHook..."}); 
+    
+    } 
+
+});
 
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
