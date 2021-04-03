@@ -32,17 +32,18 @@ app.post("/Dialogflow", function(request, response) {
   var intentName = request.body.queryResult.intent.displayName; 
   
   
-  if(intentName == 'Clientes'){ 
+  if(intentName == "Clientes"){ 
     
-    console.log('Adicionar Contato')
+    console.log('incluir')
     
     var NomeContato = request.body.queryResult.parameters['nome']; 
     var TelefoneContato = request.body.queryResult.parameters['telefone'];
-    var CpfContato = request.body.queryResult.parameters['cpf'];
     
     var query = 'insert into clientes values ("'+NomeContato+'","'
-    +TelefoneContato+'", "'+CpfContato+'")'; connection.query(query, 
-      function (error, results, fields) { 
+    +TelefoneContato+'")'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
       if (error) throw error; connection.end(); 
               response.json({"fulfillmentText" :"Contato Adicionado com Sucesso!" 
 }) 
