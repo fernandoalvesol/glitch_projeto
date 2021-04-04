@@ -84,11 +84,9 @@ app.post("/Dialogflow", function(request, response) {
     
     console.log('Pesquisar Contato'); 
     
-    var query = 'select * from clientes where rg = "528986"';
+    var CpfContato = request.body.queryResult.parameters['cpf']; 
     
-    //var CpfContato = request.body.queryResult.parameters['cpf']; 
-    
-    //var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
+    var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
     
     connection.query(query, function (error, results, fields) { 
       
