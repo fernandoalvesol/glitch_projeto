@@ -154,6 +154,23 @@ app.post("/Dialogflow", function(request, response) {
   
   }
   
+  //Excluir contatos
+  else if(intentName == 'AlterarClientes'){ 
+      console.log('Atualizar Contato') 
+        var CpfContato = request.body.queryResult.parameters['cpf']; 
+        var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
+      if (error) throw error; 
+        connection.end(); 
+      
+        response.json({"fulfillmentText": "Informações: "+"\n"+ "Nome: "+results[0].nome+
+                       "\n"+ "Cpf: "+results[0].cpf+"\n"+ "Deseja Alterar?" }) 
+    });
+  
+  }
+  
   
   
   //função soma
