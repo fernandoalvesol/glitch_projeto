@@ -130,6 +130,42 @@ app.post("/Dialogflow", function(request, response) {
   
   }
   
+  //Atualizar Horário
+  else if(intentName == 'AlterarStatus'){ 
+      console.log('Atualizar Status') 
+        var Dia = request.body.queryResult.parameters['dia']; 
+        var query = 'select * from agenda where dia = "'+Dia+'"'; 
+    
+    connection.query(query, function (error, results, fields) { 
+      
+      if (error) throw error; 
+        connection.end(); 
+      
+        response.json({"fulfillmentText":                        
+                       "Informações: "+"\n"+ 
+                       "Dia: "+results[0].dia+
+                 "\n"+ "Cpf: "+results[0].cpf+
+                 "\n"+ "Deseja Alterar?" }) 
+    });
+  
+  }
+  
+  else if(intentName == 'AlterarClientes - yes'){ 
+    console.log ("Atualizar Clientes - yes"); 
+      var CpfContato = request.body.queryResult.outputContexts[1].parameters['cpf']; 
+      var NomeContato = request.body.queryResult.parameters['nome']; 
+      var query = 'update clientes set nome = "'+NomeContato+'" where cpf = "'+CpfContato+'"'; 
+    
+        connection.query(query, function (error, results, fields) { 
+          if (error) throw error; 
+          connection.end(); 
+          
+          response.json({"fulfillmentText":"Contato Alterado com Sucesso!" }) 
+        
+        });
+  }
+ 
+  
   
   
   //Excluir contatos
@@ -152,7 +188,7 @@ app.post("/Dialogflow", function(request, response) {
   
   }
   
-  //Excluir contatos
+  //Atualizar contatos
   else if(intentName == 'AlterarClientes'){ 
       console.log('Atualizar Contato') 
         var CpfContato = request.body.queryResult.parameters['cpf']; 
