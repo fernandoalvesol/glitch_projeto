@@ -144,16 +144,16 @@ app.post("/Dialogflow", function(request, response) {
         response.json({"fulfillmentText":                        
                        "Informações: "+"\n"+ 
                        "Dia: "+results[0].dia+
-                 "\n"+ "Cpf: "+results[0].cpf+
-                 "\n"+ "Deseja Alterar?" }) 
+                 "\n"+ "Status: "+results[0].status+
+                 "\n"+ "Deseja Reservar Horário?" }) 
     });
   
   }
   
-  else if(intentName == 'AlterarClientes - yes'){ 
-    console.log ("Atualizar Clientes - yes"); 
-      var CpfContato = request.body.queryResult.outputContexts[1].parameters['cpf']; 
-      var NomeContato = request.body.queryResult.parameters['nome']; 
+  else if(intentName == 'AlterarStatus - yes'){ 
+    console.log ("Atualizar Status - yes"); 
+      var Dia = request.body.queryResult.outputContexts[1].parameters['dia']; 
+      var Status = request.body.queryResult.parameters['status']; 
       var query = 'update clientes set nome = "'+NomeContato+'" where cpf = "'+CpfContato+'"'; 
     
         connection.query(query, function (error, results, fields) { 
