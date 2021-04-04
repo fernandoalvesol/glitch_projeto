@@ -153,8 +153,8 @@ app.post("/Dialogflow", function(request, response) {
   else if(intentName == 'AlterarStatus - yes'){ 
     console.log ("Atualizar Status - yes"); 
       var Dia = request.body.queryResult.outputContexts[1].parameters['dia']; 
-      var Status = request.body.queryResult.parameters['status']; 
-      var query = 'update clientes set nome = "'+NomeContato+'" where cpf = "'+CpfContato+'"'; 
+      //var Status = 'inativo';
+      var query = 'update agenda set status = "inativo" where dia = "'+Dia+'"'; 
     
         connection.query(query, function (error, results, fields) { 
           if (error) throw error; 
