@@ -15,8 +15,10 @@ const dreams = [
 
 app.use(express.static("public"));
 
+//início da programação
 app.post("/Dialogflow", function(request, response) {
   
+  //variáveis de conexão com o banco
   var connection = mysql.createConnection({ 
     
     host: process.env.MYSQL_HOST, 
@@ -29,6 +31,7 @@ app.post("/Dialogflow", function(request, response) {
   
   connection.connect();
   
+  //variável ira pegar o que digitado no display do dialogflow
   var intentName = request.body.queryResult.intent.displayName; 
   
   //cadastrar clientes
@@ -60,6 +63,7 @@ app.post("/Dialogflow", function(request, response) {
     
     var Dia = request.body.queryResult.parameters['dia']; 
     var Status = request.body.queryResult.parameters['status']
+    
     
     var query = 'insert into agenda values ("'+Dia+'","'
     +Status+'")'; 
