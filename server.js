@@ -165,8 +165,11 @@ app.post("/Dialogflow", function(request, response) {
       if (error) throw error; 
         connection.end(); 
       
-        response.json({"fulfillmentText": "Informações: "+"\n"+ "Nome: "+results[0].nome+
-                       "\n"+ "Cpf: "+results[0].cpf+"\n"+ "Deseja Alterar?" }) 
+        response.json({"fulfillmentText":                        
+                       "Informações: "+"\n"+ 
+                       "Nome: "+results[0].nome+
+                 "\n"+ "Cpf: "+results[0].cpf+
+                 "\n"+ "Deseja Alterar?" }) 
     });
   
   }
