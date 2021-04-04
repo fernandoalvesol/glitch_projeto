@@ -174,6 +174,21 @@ app.post("/Dialogflow", function(request, response) {
   
   }
   
+  else if(intentName == 'AlterarClientes - yes'){ 
+    console.log ("Atualizar Clientes - yes"); 
+      var CpfContato = request.body.queryResult.outputContexts[1].parameters['cpf']; 
+      var NomeContato = request.body.queryResult.parameters['nome']; 
+      var query = 'update clientes set nome = "'+NomeContato+'" where cpf = "'+CpfContato+'"'; 
+    
+        connection.query(query, function (error, results, fields) { 
+          if (error) throw error; 
+          connection.end(); 
+          
+          response.json({"fulfillmentText":"Contato Alterado com Sucesso!" }) 
+        
+        });
+  }
+  
   
   
   //função soma
