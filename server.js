@@ -106,7 +106,7 @@ app.post("/Dialogflow", function(request, response) {
   else if(intentName == "ConsultarDia"){ 
     
     console.log('Pesquisar por dia'); 
-    
+      
     var query = 'select * from agenda where status = "ativo"';
     
     //var CpfContato = request.body.queryResult.parameters['cpf']; 
