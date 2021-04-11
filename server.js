@@ -117,7 +117,8 @@ app.post("/Dialogflow", function(request, response) {
       
       if (error) throw error; connection.end(); 
      
-      while($dia = query->fetch() )
+            
+      while(results->fetch()){
         
         response.json({"fulfillmentText": Dia});
         
