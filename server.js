@@ -121,9 +121,9 @@ app.post("/Dialogflow", function(request, response) {
     
       diasemana = query;
         
-      flen = diasemana.length;
+      //flen = diasemana.length;
            
-      for(i=0;i<flen;i++){
+      for(i=0;i<diasemana.length;i++){
         
         resultado = diasemana[i];
         
