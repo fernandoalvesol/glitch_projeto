@@ -116,16 +116,22 @@ app.post("/Dialogflow", function(request, response) {
     connection.query(query, function (error, results, fields) { 
       
       if (error) throw error; connection.end(); 
-                  
+     
+      for(var i = 0; i < 10; i++){
         
-      var dia = ''; dia = 'Dia: '+results[0].dia+
+        matriz[i][i] = vermelho;
+        
+        
+      }
+        
+      /*var dia = ''; dia = 'Dia: '+results[0].dia+
                           "\n |"+'Dia: '+results[1].dia+
                           "\n |"+'Dia: '+results[2].dia+
                           "\n |"+'Dia: '+results[3].dia+
                           "\n |"+'Dia: '+results[4].dia;
                 
       
-      response.json({"fulfillmentText": dia }) 
+      response.json({"fulfillmentText": dia })*/ 
     }); 
   
   }
