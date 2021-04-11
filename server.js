@@ -85,32 +85,32 @@ app.post("/Dialogflow", function(request, response) {
     console.log('Pesquisar Contato'); 
     
     var CpfContato = request.body.queryResult.parameters['cpf'];
-    
-      if(CpfContato.lenght == 11){
-         
-         var query = 'select * from clientes where cpf = "'+CpfContato+'"';  
-
-      }
-  else{
-    
-        response.json("CPF COM TAMANHO ERRADO");
-    
-  }
-        
+    //validando o tamanho do cpf
+    if(CpfContato.length == 11){
+      
+    var query = 'select * from clientes where cpf = "'+CpfContato+'"';  
          
     connection.query(query, function (error, results, fields) { 
       
       if (error) throw error; connection.end(); 
       
-                 
+                
           var contato = ''; contato = 'Nome: '+results[0].nome+
                                "\n |"+'Telefone: '+results[0].telefone+
                                 "\n |"+'Rg: '+results[0].rg; 
       
           response.json({"fulfillmentText": contato }) 
-      
         
     }); 
+      
+      
+    }
+    else if(intentName == "CpfDiferente"){
+      
+        response.json({"fulfillmentTExt": TAMANHO DO CPF ERRADO})
+    }
+                 
+   
   
   }
   
