@@ -117,11 +117,9 @@ app.post("/Dialogflow", function(request, response) {
       
       if (error) throw error; connection.end(); 
       
-      var diasemana, flen, i, resultado;
+      var diasemana, i, resultado;
     
       diasemana = query;
-        
-      //flen = diasemana.length;
            
       for(i=0;i<diasemana.length;i++){
         
