@@ -105,13 +105,7 @@ app.post("/Dialogflow", function(request, response) {
       
       
     }
-    else if(intentName == "CpfDiferente"){
-      
-        response.json({"fulfillmentTExt": TAMANHO DO CPF ERRADO})
-    }
-                 
    
-  
   }
   
   //Consultar Dia disponível
