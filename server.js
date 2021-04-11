@@ -117,9 +117,11 @@ app.post("/Dialogflow", function(request, response) {
       
       if (error) throw error; connection.end(); 
      
-      for(var i = 0; i < 10; i++){
+      for(var dia; dia = 10; results[0].dia++){
         
-        matriz[i][i] = vermelho;
+              var Dia = dia;
+        
+        response.json({"fulfillmentText": Dia});
         
         
       }
