@@ -113,19 +113,21 @@ app.post("/Dialogflow", function(request, response) {
     
     //var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
     
-    var diasemana, flen, i;
-    
-      diasemana = connection.query(query, function (error, results, fields) { 
+      connection.query(query, function (error, results, fields) { 
       
-        if (error) throw error; connection.end(); 
-            
+      if (error) throw error; connection.end(); 
+      
+      var diasemana, flen, i, resultado;
+    
+      diasemana = query;
+        
       flen = diasemana.length;
            
       for(i=0;i<flen;i++){
         
-        diasemana.[i];
+        resultado = diasemana[i];
         
-        response.json({"fulfillmentText": });
+        response.json({"fulfillmentText": resultado });
         
         
       }
