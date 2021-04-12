@@ -127,12 +127,15 @@ app.post("/Dialogflow", function(request, response) {
       var diasemana, i, resultado;
     
       diasemana = query;
+        
+        console.log(diasemana);
            
-      for(i=0;i<diasemana.length;i++){
+          for(i=0;i<diasemana.length;i++){
         
-        resultado = diasemana[i];
+          resultado = diasemana[i];
         
-        response.json({"fulfillmentText": resultado });
+        
+          response.json({"fulfillmentText": resultado });
         
         
       }
