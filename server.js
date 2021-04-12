@@ -132,11 +132,11 @@ app.post("/Dialogflow", function(request, response) {
       
       var diasemana, i, resultado;
     
-      diasemana = results[0].dia;
+      //diasemana = results;
                   
-          for(i=0;i<diasemana.length;i++){
+          for(i=0;i<results.length;i++){
         
-          resultado = diasemana[i];        
+          resultado = results[i];        
         
           response.json({"fulfillmentText": resultado });
         
