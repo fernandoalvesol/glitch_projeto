@@ -105,6 +105,10 @@ app.post("/Dialogflow", function(request, response) {
       
       
     }
+    else if(CpfContato.length <= 11){
+      
+      
+    }
    
   }
   
