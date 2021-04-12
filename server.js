@@ -105,9 +105,11 @@ app.post("/Dialogflow", function(request, response) {
       
       
     }
-    else if(CpfContato.length <= 11){
+    else if(CpfContato.length != 11){
       
+      var cpfnow = 'CPF INVALIDO';
       
+      response.json({"fulfillmentText": cpfnow }) 
     }
    
   }
@@ -130,12 +132,11 @@ app.post("/Dialogflow", function(request, response) {
       
       var diasemana, i, resultado;
     
-      diasemana = query;
+      diasemana = results[0].dia;
                   
           for(i=0;i<diasemana.length;i++){
         
-          resultado = diasemana[i];
-        
+          resultado = diasemana[i];        
         
           response.json({"fulfillmentText": resultado });
         
