@@ -128,15 +128,17 @@ app.post("/Dialogflow", function(request, response) {
     
       connection.query(query, function (error, results, fields) { 
       
-      if (error) throw error; connection.end(); 
+      if (error) throw error; 
+        
+      connection.end(); 
       
       var diasemana, i, resultado;
     
-      //diasemana = results;
+      diasemana = results.dia;
                   
-          for(i=0;i<results.length;i++){
+          for(i=0;i<diasemana.length;i++){
         
-          resultado = results[i];        
+          resultado = diasemana[i];        
         
           response.json({"fulfillmentText": resultado });
         
