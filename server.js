@@ -59,7 +59,7 @@ app.post("/Dialogflow", function(request, response) {
   
   //Consultar Clientes
   
-  else if(intentName == "semconexao"){ 
+    if(intentName == "abrirchamado"){ 
     
     console.log('Pesquisar Contato'); 
     
@@ -84,6 +84,7 @@ app.post("/Dialogflow", function(request, response) {
       
       
     }
+      
     else if(CpfContato.length != 11){
       
       var cpfnow = 'CPF INVALIDO';
@@ -95,46 +96,6 @@ app.post("/Dialogflow", function(request, response) {
   
   //Consultar Dia disponível
   
-  else if(intentName == "ConsultarDia"){ 
-    
-    console.log('Pesquisar por dia'); 
-      
-    var query = 'select * from agenda where status = "ativo"';
-    
-    //var CpfContato = request.body.queryResult.parameters['cpf']; 
-    
-    //var query = 'select * from clientes where cpf = "'+CpfContato+'"'; 
-    
-      connection.query(query, function (error, results, fields) { 
-      
-      if (error) throw error; 
-        
-      connection.end(); 
-      
-      var diasemana, i, resultado;
-    
-      diasemana = results.dia;
-                  
-          for(i=0;i<diasemana.length;i++){
-        
-          resultado = diasemana[i];        
-        
-          response.json({"fulfillmentText": resultado });
-        
-        
-      }
-        
-      /*var dia = ''; dia = 'Dia: '+results[0].dia+
-                          "\n |"+'Dia: '+results[1].dia+
-                          "\n |"+'Dia: '+results[2].dia+
-                          "\n |"+'Dia: '+results[3].dia+
-                          "\n |"+'Dia: '+results[4].dia;
-                
-      
-      response.json({"fulfillmentText": dia })*/ 
-    }); 
-  
-  }
   
   //Atualizar Horário
   else if(intentName == 'AlterarStatus'){ 
