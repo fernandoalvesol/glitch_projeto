@@ -35,7 +35,7 @@ app.post("/Dialogflow", function(request, response) {
   var intentName = request.body.queryResult.intent.displayName; 
   
   //cadastrar clientes
-  if(intentName == "AdicionarClientes"){ 
+  if(intentName == "Contratar"){ 
     
     console.log('incluir')
     
@@ -43,9 +43,10 @@ app.post("/Dialogflow", function(request, response) {
     var TelefoneContato = request.body.queryResult.parameters['telefone'];
     var CpfContato = request.body.queryResult.parameters['cpf'];
     var RgContato = request.body.queryResult.parameters['rg']
+    var ProtocoloContato = request.body.queryResult.parameters['protocolo']
     
     var query = 'insert into clientes values ("'+NomeContato+'","'
-    +TelefoneContato+'", "'+CpfContato+'", "'+RgContato+'")'; 
+    +TelefoneContato+'", "'+CpfContato+'", "'+RgContato+'", "'+ProtocoloContato+'")'; 
     
     connection.query(query, function (error, results, fields) { 
       
