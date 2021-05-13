@@ -59,7 +59,7 @@ app.post("/Dialogflow", function(request, response) {
   
   //Consultar Clientes
   
-    if(intentName == "abrirchamado"){ 
+  if(intentName == "chamado"){ 
     
     console.log('Pesquisar Contato'); 
     
