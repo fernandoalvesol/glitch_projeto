@@ -75,8 +75,8 @@ app.post("/Dialogflow", function(request, response) {
       
                 
           var contato = ''; contato = 'Nome: '+results[0].nome+
-                               "\n |"+'Telefone: '+results[0].telefone+
-                                "\n |"+'Rg: '+results[0].rg; 
+                               "\n |"+'Numero de Protocolo: '+results[0].protocolo+
+                                "\n |"+'Chamado Aberto com Sucesso, aguarde nos entraremos em contato o mais breve possível.' 
       
           response.json({"fulfillmentText": contato }) 
         
