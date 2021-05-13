@@ -59,7 +59,7 @@ app.post("/Dialogflow", function(request, response) {
   
   //Consultar Clientes
   
-  if(intentName == "chamado"){ 
+  else if(intentName == "chamado"){ 
     
     console.log('Pesquisar Contato'); 
     
@@ -75,8 +75,9 @@ app.post("/Dialogflow", function(request, response) {
       
                 
           var contato = ''; contato = 'Nome: '+results[0].nome+
-                               "\n |"+'Numero de Protocolo: '+results[0].protocolo+
-                                "\n |"+'Chamado Aberto com Sucesso, aguarde nos entraremos em contato o mais breve possível.' 
+                               "\n "+'Numero de Protocolo: '+results[0].protocolo+
+                                "\n "+'Chamado Aberto com Sucesso, aguarde nos entraremos '+
+                                 "\n" +'em contato o mais breve possível.' 
       
           response.json({"fulfillmentText": contato }) 
         
