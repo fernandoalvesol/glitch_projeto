@@ -12,22 +12,26 @@ app.get("/", (request, response) => {
 });
 
 app.post('/Dialogflow', function(request, response) {
-var intentName = request.body.queryResult.intent.displayName;
+
+  var intentName = request.body.queryResult.intent.displayName;
   
   if (intentName == "bebida") {
     
-    var Pizza = "calabresa";
-    var bebida = "coca coal 1 litro";
-    var taxa = "5,00";
-        
-    var valorPizza = 27.00;
-    var valorBebida = 6.50;
-    var txentrega = 5.00;
+    var number = request.body.queryResult.parameters['number'];
     
-    var totalpedido = valorPizza + valorBebida + txentrega;
+    if(number == 1){
+      
+      var Pizza = "calabresa";
+      var bebida = "coca coal 1 litro";
+      var taxa = "5,00";
+
+      var valorPizza = 27.00;
+      var valorBebida = 6.50;
+      var txentrega = 5.00;
+    
+      var totalpedido = valorPizza + valorBebida + txentrega;
        
-    
- response.json({ "fulfillmentText" : 
+      response.json({ "fulfillmentText" : 
                 "====== CONFIRE SEU PEDIDO====="+
                 "PIZZA: "+Pizza+"/n"+
                 "BEBIDA:"+bebida+"/n"+
@@ -37,8 +41,14 @@ var intentName = request.body.queryResult.intent.displayName;
                 "Para confirmar Digite FECHAR"
                
                });
-    
- } 
+    }else if( number == 2){
+      
+      response.json({ "fulfillmentText" : "S"});
+      
+      
+    }  
+        
+ }
   
 });
 
