@@ -91,9 +91,141 @@ app.post('/Dialogflow', function(request, response) {
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
+      
+      
+      //PIZZA MODA DA CASA      
+    }else if( pizza == 2 && bebida == 1){
+
+      var npizza = "MODA DA CASA";
+      var nbebida = "REFRIGERANTE 1 LITRO";
+      
+      var vpizza = 27.00;
+      var vbebida = 6.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });
+    }else if( pizza == 2 && bebida == 2){
+
+      var npizza = "MODA DA CASA";
+      var nbebida = "REFRIGERANTE 2 LITRO";
+      
+      var vpizza = 27.00;
+      var vbebida = 9.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });
+    }else if( pizza == 2 && bebida == 3){
+
+      var npizza = "MODA DA CASA";
+      var nbebida = "REFRIGERANTE 350ML LATA";
+      
+      var vpizza = 27.00;
+      var vbebida = 4.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });
     }
-    
-    
+      
+    //PIZZA FRANGO
+    else if( pizza == 3 && bebida == 1){
+
+      var npizza = "PIZZA DE FRANGO";
+      var nbebida = "REFRIGERANTE 1 LITRO";
+      
+      var vpizza = 27.00;
+      var vbebida = 6.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });
+      
+    }else if( pizza == 3 && bebida == 2){
+
+      var npizza = "PIZZA DE FRANGO";
+      var nbebida = "REFRIGERANTE 2 LITRO";
+      
+      var vpizza = 27.00;
+      var vbebida = 6.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });
+    }
+    else if( pizza == 3 && bebida == 3){
+
+      var npizza = "PIZZA DE FRANGO";
+      var nbebida = "REFRIGERANTE 350ML LATA";
+      
+      var vpizza = 27.00;
+      var vbebida = 4.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });
+    }
     
     } 
   
