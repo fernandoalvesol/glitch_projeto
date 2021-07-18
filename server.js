@@ -38,8 +38,7 @@ app.post('/Dialogflow', function(request, response) {
                      "VALOR DO PEDIDO: "+total+
                      "Para confirmar digite FECHAR"
                     
-                    });
-      
+                    });      
       
     }else if( pizza == 1 && bebida == 2){
 
@@ -60,7 +59,6 @@ app.post('/Dialogflow', function(request, response) {
                      "Para confirmar digite FECHAR"
                     
                     });
-      
     }
     
     
