@@ -17,8 +17,51 @@ app.post('/Dialogflow', function(request, response) {
   
   if (intentName == "SIMPLES") {
     
-    var number = request.body.queryResult.parameters['number'];
-    var pizza = request.body.queryResult.parameters['number'];
+    var bebida = request.body.queryResult.parameters['bebida'];
+    var pizza = request.body.queryResult.parameters['pizza'];
+    
+    if( pizza == 1 && bebida == 1 ){
+      
+      var npizza = "CALABRESA";
+      var nbebida = "coca cola 1 litro";
+      
+      var vpizza = 27.00;
+      var vbebida = 6.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+     response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: " +
+                    
+                     "PIZZA: "+npizza+
+                     "BEBIDA: "+nbebida+
+                     "VALOR DO PEDIDO: "+total+
+                     "Para confirmar digite FECHAR"
+                    
+                    });
+      
+      
+    }else if( pizza == 1 && bebida == 2){
+
+      var npizza = "MODA DA CASA";
+      var nbebida = "coca cola 2 litro";
+      
+      var vpizza = 27.00;
+      var vbebida = 9.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: " +
+                    
+                     "PIZZA: "+npizza+
+                     "BEBIDA: "+nbebida+
+                     "VALOR DO PEDIDO: "+total+
+                     "Para confirmar digite FECHAR"
+                    
+                    });
+      
+    }
     
     
     
