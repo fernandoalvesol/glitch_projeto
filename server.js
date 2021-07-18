@@ -42,7 +42,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     
@@ -66,7 +67,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -88,7 +90,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     
@@ -113,7 +116,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -137,7 +141,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     
@@ -163,7 +168,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -184,7 +190,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -205,7 +212,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -220,13 +228,14 @@ app.post('/Dialogflow', function(request, response) {
       var total = vpizza + txentrega;
       
      response.json({"fulfillmentText" : +
-                     "===== CONFIRA SEU PEDIDO =======: "+
+                    "===== CONFIRA SEU PEDIDO =======: "+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     
@@ -246,13 +255,14 @@ app.post('/Dialogflow', function(request, response) {
       var total = vpizza + vbebida + txentrega;
       
       response.json({"fulfillmentText" : +
-                    "===== CONFIRA SEU PEDIDO =======: "+
+                   "===== CONFIRA SEU PEDIDO =======: "+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -274,7 +284,8 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
@@ -296,10 +307,34 @@ app.post('/Dialogflow', function(request, response) {
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
-                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
+    }
+    if( pizza == 3 && bebida == 7){
+      
+      var npizza = ",PIZZA DE FRANGO";
+      var nbebida = "SEM BEBIDA";
+      
+      var vpizza = 27.00;
+      var txentrega = 5.00;
+      var total = vpizza + txentrega;
+      
+     response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "TAXA DE ENTREGA: "+txentrega+"\n"+
+                     "VALOR DO PEDIDO: R$" +total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    });  
+      
     }
     
     } 
