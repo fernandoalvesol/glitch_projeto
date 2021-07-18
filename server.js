@@ -25,7 +25,7 @@ app.post('/Dialogflow', function(request, response) {
     var troco = request.body.queryResult.parameters['troco'];
     
     //PIZZA CALABRESA
-    if( pizza == 1 && bebida == 1 ){
+    if( pizza == 1 && bebida == 1){
       
       var npizza = "CALABRESA";
       var nbebida = "REFRIGERANTE 1 LITRO";
@@ -48,7 +48,8 @@ app.post('/Dialogflow', function(request, response) {
                     
                     });      
       
-    }else if( pizza == 1 && bebida == 2){
+    }
+    else if( pizza == 1 && bebida == 2){
 
       var npizza = "CALABRESA";
       var nbebida = "REFRIGERANTE 2 LITRO";
@@ -70,7 +71,32 @@ app.post('/Dialogflow', function(request, response) {
                      "Para confirmar digite FECHAR"
                     });
       
-    }else if( pizza == 1 && bebida == 3){
+    }
+    if( pizza == 1 && bebida == 7){
+      
+      var npizza = "CALABRESA";
+      var nbebida = "SEM BEBIDA";
+      
+      var vpizza = 27.00;
+      var txentrega = 5.00;
+      var total = vpizza + txentrega;
+      
+     response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    
+                    });  
+      
+    }   
+    
+    else if( pizza == 1 && bebida == 3){
 
       var npizza = "CALABRESA";
       var nbebida = "REFRIGERANTE LATA350ML";
@@ -93,8 +119,34 @@ app.post('/Dialogflow', function(request, response) {
                     });
       
       
-      //PIZZA MODA DA CASA      
-    }else if( pizza == 2 && bebida == 1){
+       
+    }
+    if( pizza == 1 && bebida == 7){
+      
+      var npizza = "CALABRESA";
+      var nbebida = "SEM BEBIDA";
+      
+      var vpizza = 27.00;
+      var txentrega = 5.00;
+      var total = vpizza + txentrega;
+      
+     response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    
+                    });  
+      
+    }
+    
+    //PIZZA MODA DA CASA
+    else if( pizza == 2 && bebida == 1){
 
       var npizza = "MODA DA CASA";
       var nbebida = "REFRIGERANTE 1 LITRO";
@@ -157,6 +209,29 @@ app.post('/Dialogflow', function(request, response) {
                      "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
+    }
+    if( pizza == 2 && bebida == 7){
+      
+      var npizza = ",MODA DA CASA";
+      var nbebida = "SEM BEBIDA";
+      
+      var vpizza = 27.00;
+      var txentrega = 5.00;
+      var total = vpizza + txentrega;
+      
+     response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
+                     "Para confirmar digite FECHAR"
+                    
+                    });  
+      
     }
       
     //PIZZA FRANGO
