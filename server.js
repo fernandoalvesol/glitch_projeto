@@ -6,16 +6,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
-
-
 app.use(express.static("public"));
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
+});
+
+app.post('/Dialogflow', function(request, response) {
+var intentName = request.body.queryResult.intent.displayName;
+  
+  if (intentName == "Calabresa") {
+       
+    
+ response.json({ "fulfillmentText" : "Isso aqui é um Teste"});
+ } 
+  
 });
 
 
