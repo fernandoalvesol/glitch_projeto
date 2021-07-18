@@ -16,6 +16,10 @@ var intentName = request.body.queryResult.intent.displayName;
   
   if (intentName == "bebida") {
     
+    var Pizza = "calabresa";
+    var bebida = "coca coal 1 litro";
+    var taxa = "5,00";
+        
     var valorPizza = 27.00;
     var valorBebida = 6.50;
     var txentrega = 5.00;
@@ -23,7 +27,17 @@ var intentName = request.body.queryResult.intent.displayName;
     var totalpedido = valorPizza + valorBebida + txentrega;
        
     
- response.json({ "fulfillmentText" : "o valor do pedido:" +totalpedido});
+ response.json({ "fulfillmentText" : 
+                "====== CONFIRE SEU PEDIDO====="+
+                "PIZZA: "+Pizza+"/n"+
+                "BEBIDA:"+bebida+"/n"+
+                "TAXA DE ENTREGA: "+taxa+"/n"+
+                "TOTAL DO PEDIDO:" +totalpedido+"/n"+
+                
+                "Para confirmar Digite FECHAR"
+               
+               });
+    
  } 
   
 });
