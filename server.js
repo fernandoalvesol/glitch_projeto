@@ -22,6 +22,7 @@ app.post('/Dialogflow', function(request, response) {
     var name = request.body.queryResult.parameters['name'];
     var endereco = request.body.queryResult.parameters['endereco'];
     var referencia = request.body.queryResult.parameters['referencia'];
+    var troco = request.body.queryResult.parameters['troco'];
     
     //PIZZA CALABRESA
     if( pizza == 1 && bebida == 1 ){
@@ -35,13 +36,14 @@ app.post('/Dialogflow', function(request, response) {
       var total = vpizza + vbebida + txentrega;
       
      response.json({"fulfillmentText" : +
-                     "===== CONFIRA SEU PEDIDO =======: " +
-                     "NOME: "+name+
-                     "ENDEREÇO: "+endereco+
-                     "REFERENCIA: "+referencia+
-                     "PIZZA: "+npizza+
-                     "BEBIDA: "+nbebida+
-                     "VALOR DO PEDIDO: "+total+
+                     "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     
                     });      
@@ -57,15 +59,15 @@ app.post('/Dialogflow', function(request, response) {
       var total = vpizza + vbebida + txentrega;
       
       response.json({"fulfillmentText" : +
-                     "===== CONFIRA SEU PEDIDO =======: " +
+                     "===== CONFIRA SEU PEDIDO =======: "+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
                      "PIZZA: "+npizza+"\n"+
                      "BEBIDA: "+nbebida+"\n"+
                      "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
-                    
                     });
       
     }else if( pizza == 1 && bebida == 3){
@@ -79,13 +81,14 @@ app.post('/Dialogflow', function(request, response) {
       var total = vpizza + vbebida + txentrega;
       
       response.json({"fulfillmentText" : +
-                     "===== CONFIRA SEU PEDIDO =======: " +
-                     "NOME: "+name+
-                     "ENDEREÇO: "+endereco+
-                     "REFERENCIA: "+referencia+
-                     "PIZZA: "+npizza+
-                     "BEBIDA: "+nbebida+
-                     "VALOR DO PEDIDO: "+total+
+                    "===== CONFIRA SEU PEDIDO =======: "+
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "TROCO: "+troco+"\n"+ 
                      "Para confirmar digite FECHAR"
                     });
     }
