@@ -19,11 +19,15 @@ app.post('/Dialogflow', function(request, response) {
     
     var bebida = request.body.queryResult.parameters['bebida'];
     var pizza = request.body.queryResult.parameters['pizza'];
+    var name = request.body.queryResult.parameters['name'];
+    var endereco = request.body.queryResult.parameters['endereco'];
+    var referencia = request.body.queryResult.parameters['referencia'];
     
+    //PIZZA CALABRESA
     if( pizza == 1 && bebida == 1 ){
       
       var npizza = "CALABRESA";
-      var nbebida = "coca cola 1 litro";
+      var nbebida = "REFRIGERANTE 1 LITRO";
       
       var vpizza = 27.00;
       var vbebida = 6.50;
@@ -32,7 +36,9 @@ app.post('/Dialogflow', function(request, response) {
       
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: " +
-                    
+                     "NOME: "+name+
+                     "ENDEREÇO: "+endereco+
+                     "REFERENCIA: "+referencia+
                      "PIZZA: "+npizza+
                      "BEBIDA: "+nbebida+
                      "VALOR DO PEDIDO: "+total+
@@ -42,8 +48,8 @@ app.post('/Dialogflow', function(request, response) {
       
     }else if( pizza == 1 && bebida == 2){
 
-      var npizza = "MODA DA CASA";
-      var nbebida = "coca cola 2 litro";
+      var npizza = "CALABRESA";
+      var nbebida = "REFRIGERANTE 2 LITRO";
       
       var vpizza = 27.00;
       var vbebida = 9.50;
@@ -52,12 +58,35 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: " +
+                     "NOME: "+name+"\n"+
+                     "ENDEREÇO: "+endereco+"\n"+
+                     "REFERENCIA: "+referencia+"\n"+
+                     "PIZZA: "+npizza+"\n"+
+                     "BEBIDA: "+nbebida+"\n"+
+                     "VALOR DO PEDIDO: "+total+"\n"+
+                     "Para confirmar digite FECHAR"
                     
+                    });
+      
+    }else if( pizza == 1 && bebida == 3){
+
+      var npizza = "CALABRESA";
+      var nbebida = "REFRIGERANTE LATA350ML";
+      
+      var vpizza = 27.00;
+      var vbebida = 4.50;
+      var txentrega = 5.00;
+      var total = vpizza + vbebida + txentrega;
+      
+      response.json({"fulfillmentText" : +
+                     "===== CONFIRA SEU PEDIDO =======: " +
+                     "NOME: "+name+
+                     "ENDEREÇO: "+endereco+
+                     "REFERENCIA: "+referencia+
                      "PIZZA: "+npizza+
                      "BEBIDA: "+nbebida+
                      "VALOR DO PEDIDO: "+total+
                      "Para confirmar digite FECHAR"
-                    
                     });
     }
     
