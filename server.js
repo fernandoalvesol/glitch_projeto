@@ -14,10 +14,16 @@ app.get("/", (request, response) => {
 app.post('/Dialogflow', function(request, response) {
 var intentName = request.body.queryResult.intent.displayName;
   
-  if (intentName == "Calabresa") {
+  if (intentName == "bebida") {
+    
+    var valorPizza = 27.00;
+    var valorBebida = 6.50;
+    var txentrega = 5.00;
+    
+    var totalpedido = valorPizza + valorBebida + txentrega;
        
     
- response.json({ "fulfillmentText" : "Isso aqui é um Teste"});
+ response.json({ "fulfillmentText" : "o valor do pedido:" +totalpedido});
  } 
   
 });
