@@ -26,6 +26,7 @@ app.post('/Dialogflow', function(request, response) {
     
     var data = new Date();
     var ano = data.getFullYear();
+    var mes = (data.getMonth()+1);
     var pedido = Math.floor(Math.random() * 6556);
     
     //PIZZA CALABRESA
@@ -41,7 +42,7 @@ app.post('/Dialogflow', function(request, response) {
       
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
-                     "NUMERO DO PEDIDO: "+ano+""+pedido+
+                     "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -67,6 +68,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
+                     "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -90,6 +92,7 @@ app.post('/Dialogflow', function(request, response) {
       
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
+                     "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -116,6 +119,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -141,6 +145,7 @@ app.post('/Dialogflow', function(request, response) {
       
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
+                     "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -168,6 +173,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -190,6 +196,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -212,6 +219,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -234,6 +242,7 @@ app.post('/Dialogflow', function(request, response) {
       
      response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                     "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -261,6 +270,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                    "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -284,6 +294,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -307,6 +318,7 @@ app.post('/Dialogflow', function(request, response) {
       
       response.json({"fulfillmentText" : +
                     "===== CONFIRA SEU PEDIDO =======: "+
+                      "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
@@ -329,6 +341,7 @@ app.post('/Dialogflow', function(request, response) {
       
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
+                     "PEDIDO: "+ano+""+mes+""+pedido+"\n"+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
