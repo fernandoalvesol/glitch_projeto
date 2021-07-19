@@ -35,8 +35,12 @@ app.post('/Dialogflow', function(request, response) {
       var txentrega = 5.00;
       var total = vpizza + vbebida + txentrega;
       
+      var naleatorio = Math.floor(Math.random() * 655628);
+      var pedido = "2021"
+      
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
+                     "NUMERO DO PEDIDO: "+protoco+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
