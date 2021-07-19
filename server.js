@@ -24,8 +24,12 @@ app.post('/Dialogflow', function(request, response) {
     var referencia = request.body.queryResult.parameters['referencia'];
     var troco = request.body.queryResult.parameters['troco'];
     
+    var data = new Date();
+    var ano = data.getFullYear();
+    var pedido = Math.floor(Math.random() * 6556);
+    
     //PIZZA CALABRESA
-    if( pizza == 1 && bebida == 1){
+    if( pizza == 1 && bebida == 1){ 
       
       var npizza = "CALABRESA";
       var nbebida = "REFRIGERANTE 1 LITRO";
@@ -33,14 +37,11 @@ app.post('/Dialogflow', function(request, response) {
       var vpizza = 27.00;
       var vbebida = 6.50;
       var txentrega = 5.00;
-      var total = vpizza + vbebida + txentrega;
-      
-      var naleatorio = Math.floor(Math.random() * 655628);
-      var pedido = "2021"
+      var total = vpizza + vbebida + txentrega; 
       
      response.json({"fulfillmentText" : +
                      "===== CONFIRA SEU PEDIDO =======: "+
-                     "NUMERO DO PEDIDO: "+protoco+
+                     "NUMERO DO PEDIDO: "+ano+""+pedido+
                      "NOME: "+name+"\n"+
                      "ENDEREÇO: "+endereco+"\n"+
                      "REFERENCIA: "+referencia+"\n"+
